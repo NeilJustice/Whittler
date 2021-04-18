@@ -74,13 +74,13 @@ Seen in this screenshot is the code that writes either `stdout` or `stderr` to W
 
 ## Linux Jenkins job which unit tests, mypys, flake8s, pylints, SonarQubes, then pyinstaller creates Linux binary whittler
 
-A Jenkins Blue Ocean build pipeline builds the following Whittler Jenkins job on Fedora 33 with Python 3.9.2:
+A Jenkins Blue Ocean build pipeline builds the following Jenkins job on Fedora 33 with Python 3.9.2 to statically analyze and unit test Whittler:
 
 ![Linux Whittler Jenkins job](Screenshots/Linux/LinuxJenkinsJob.png)
 
 ## Windows Jenkins Job Which Unit Tests, Mypys, Flake8s, Pylints, SonarQubes, then Pyinstaller Creates Windows Executable Whittler.exe
 
-A Jenkins Blue Ocean build pipeline builds the following Whittler Jenkins job on Windows 10 with Python 3.9.4:
+A Jenkins Blue Ocean build pipeline builds the following Jenkins job on Windows 10 with Python 3.9.4 to statically analyze and unit test Whittler:
 
 ![Windows Whittler Jenkins job](Screenshots/Windows/WindowsJenkinsJob.png)
 
