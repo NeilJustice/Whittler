@@ -1,0 +1,59 @@
+name: Whittler
+
+on: [push]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+         os: [ubuntu-latest, windows-latest]
+         
+    runs-on: ${{ matrix.os }}
+        
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+      
+      - uses: actions/cache@v2
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}-${{ hashFiles('setup.py') }}-${{ hashFiles('dev-requirements.txt') }}
+      
+      - name: Install pip packages
+        #run: pip install coverage docopt flake8 mypy pylint pytest
+        run: pip install --upgrade --upgrade-strategy eager -r dev-requirements.txt
+      
+      - name: mypy, flake8, pylint, then run all unit tests with coverage and pytest
+        run: python WhittlerTests/MypyFlake8PylintRunTestsWithCoverage.py --run-tests-with-coverage-python-file=WhittlerTests/RunAllWithCoverage.py
+        env:
+          PYTHONPATH: "."
+          
+      - name: Run Whittler
+        run: python Whittler/WhittlerMain.py
+        env:
+          PYTHONPATH: "."
+          
+      - uses: codecov/codecov-action@v1
+        with:
+          files: WhittlerTests/CoberturaCodeCoverageResults_WhittlerTests.xml
+          fail_ci_if_error: true
+          verbose: true
+          
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          
+      - name: SonarCloud scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
