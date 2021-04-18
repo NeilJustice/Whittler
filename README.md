@@ -1,6 +1,6 @@
 # Whittler
 
-[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/) ![GitHub last commit](https://img.shields.io/github/last-commit/NeilJustice/GitHubActionsPython)
+[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/) ![GitHub last commit](https://img.shields.io/github/last-commit/NeilJustice/Whittler)
 
 Whittler is a Python command line program which facilitates the figurative "whittling away" (deletion) of standard output text, especially Linux `program_name --help` standard output text, resulting in a file containing only the most useful standard output text.
 
@@ -8,9 +8,9 @@ For example, when learning a new Linux executable such as `ansible-playbook`, on
 
 |Build Type|Build Status|
 |----------|------------|
-|GitHub Actions build for Linux, MacOS, and Windows|[![GitHubActionsPython](https://github.com/NeilJustice/GitHubActionsPython/actions/workflows/build.yml/badge.svg)](https://github.com/NeilJustice/GitHubActionsPython/actions/workflows/build.yml)|
-|Codecov.io code coverage|[![codecov](https://codecov.io/gh/NeilJustice/GitHubActionsPython/branch/main/graph/badge.svg?token=g9qpHBaepU)](https://codecov.io/gh/NeilJustice/GitHubActionsPython)|
-|SonarCloud static analysis|[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NeilJustice_GitHubActionsPython&metric=alert_status)](https://sonarcloud.io/dashboard?id=NeilJustice_GitHubActionsPython)|
+|GitHub Actions build for Linux, MacOS, and Windows|[![Whittler](https://github.com/NeilJustice/Whittler/actions/workflows/build.yml/badge.svg)](https://github.com/NeilJustice/Whittler/actions/workflows/build.yml)|
+|Codecov.io code coverage|[![codecov](https://codecov.io/gh/NeilJustice/Whittler/branch/main/graph/badge.svg?token=g9qpHBaepU)](https://codecov.io/gh/NeilJustice/Whittler)|
+|SonarCloud static analysis|[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NeilJustice_Whittler&metric=alert_status)](https://sonarcloud.io/dashboard?id=NeilJustice_Whittler)|
 
 * [Whittler Command Line Usage](#whittler-command-line-usage)
 * [Whittler Program Behavior](#whittler-program-behavior)
