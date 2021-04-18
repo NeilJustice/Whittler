@@ -42,6 +42,8 @@ The prime use case for Whittler is to "whittle away" command line arguments and 
 
 For example, when `whittler ansible --help` is run, standard output for `ansible --help` is written to file `~/.config/Whittler/ansible --help.txt` and is then opened with the `$EDITOR` text editor.
 
+In this screenshot, `$EDITOR` is defined as `nvim`, and contents of directory `~/.config/Whittler` is listed having having run `whittler ansible --help`:
+
 ![Whittler command line](Screenshots/Linux/WhittlerCommandLine.png)
 
 Here is the starting, not-yet-whittled standard output text for `ansible --help`:
