@@ -4,7 +4,7 @@
 
 Whittler is a Python command line program which facilitates the figurative "whittling away" (deletion) of standard output text, especially Linux `program_name --help` standard output text, resulting in a file containing only the most useful standard output text.
 
-For example, when learning a new Linux executable such as `ansible-playbook`, one can repeatedly invoke `whittler ansible-playbook --help` to iteratively "whittle away" command line arguments and command line argument descriptions so as to have a text file containing only `ansible-playbook` command line arguments not yet learned or experimented with.
+For example, when learning a new Linux executable such as `ansible`, one can repeatedly invoke `whittler ansible --help` to iteratively "whittle away" command line arguments and command line argument descriptions so as to be left with a text file containing only `ansible` command line arguments not yet experimented with.
 
 |Build Type|Build Status|
 |----------|------------|
@@ -38,7 +38,7 @@ file ~/.config/Whittler/<CommandLine>.txt is opened with EDITOR for continued ed
 
 ## Whittler Program Behavior
 
-The prime use case for Whittler is to "whittle away" command line arguments and command line argument descriptions of new Linux programs in the process of being learned, resulting in a file containing only not-yet-experimented-with command line arguments.
+The prime use case for Whittler is to "whittle away" command line arguments and command line argument descriptions for Linux programs in the process of being learned, resulting in a file containing only not-yet-experimented-with command line arguments.
 
 For example, when `whittler ansible --help` is run, standard output for `ansible --help` is written to file `~/.config/Whittler/ansible --help.txt` and is then opened with the `$EDITOR` text editor.
 
@@ -56,7 +56,7 @@ After an initial bout of text whittling, here is one possible instance of whittl
 
 ![ansible Whittler phase 2](Screenshots/Linux/AnsibleWhittlerPhase2.png)
 
-Thereafter, whenever `whittler ansible --help` is run, file `~/.config/Whittler/ansible --help.txt` will be reopened with `$EDITOR` for continued editing / whittling.
+Thereafter, whenever `whittler ansible --help` is run, existing file `~/.config/Whittler/ansible --help.txt` is reopened with `$EDITOR` for continued editing / whittling.
 
 ## Whittler Python Code Structure As It Appears In Visual Studio Code On Linux
 
@@ -110,8 +110,8 @@ Resulting executable `C:\bin\Whittler.exe`:
 
 ## Whittler Roadmap
 
-|Feature Feature|Implementation Status|
-|---------------|---------------------|
+|Future feature|Implementation status as of 4/17/2021|
+|--------------|-------------------------------------|
 |GitHub Actions build|Awaiting implementation|
 |100% Codecov.io badge|Awaiting implementation|
 |Replace unittest with pytest|Awaiting implementation|
