@@ -1,0 +1,10 @@
+[FORMAT]
+indent-string='   '
+max-line-length=1000
+
+[MASTER]
+disable=invalid-name,no-member,no-value-for-parameter,missing-docstring,too-many-function-args
+
+[REPORTS]
+output-format=text
+reports=no

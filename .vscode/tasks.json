@@ -1,0 +1,70 @@
+{
+   "version": "2.0.0",
+   "tasks": [
+      {
+         "label": "Run",
+         "type": "shell",
+         "command": "export PYTHONPATH=.. && python ${file}",
+         "options": {
+            "cwd": "${fileDirname}"
+         },
+         "group": {
+            "kind": "test",
+            "isDefault": true
+         },
+         "presentation": {
+            "panel": "dedicated",
+            "showReuseMessage": false,
+            "clear": true
+         }
+      },
+      {
+         "label": "pylint Current File",
+         "type": "shell",
+         "command": "time pylint --rcfile=${workspaceRoot}/.pylintrc --init-hook=\"sys.path.append('${workspaceRoot}')\" ${file} --score=n -j 0",
+         "options": {
+            "cwd": "${workspaceRoot}"
+         },
+         "problemMatcher": [
+            "$gcc"
+         ]
+      },
+      {
+         "label": "pylint All",
+         "type": "shell",
+         "command": "time ag -g '\\.py$' -0 | xargs -0 -n 1 -P 0 -t pylint --init-hook='sys.path.append(\".\")' --rcfile=.pylintrc --score=n",
+         "options": {
+            "cwd": "${workspaceRoot}"
+         },
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         },
+         "problemMatcher": [
+            "$gcc"
+         ]
+      },
+      {
+         "label": "flake8 All",
+         "type": "shell",
+         "command": "time flake8 --config=${workspaceRoot}/.flake8 --show-source ${workspaceRoot}",
+         "options": {
+            "cwd": "${workspaceRoot}"
+         },
+         "problemMatcher": [
+            "$gcc"
+         ]
+      },
+      {
+         "label": "Mypy",
+         "type": "shell",
+         "command": "mypy .",
+         "options": {
+            "cwd": "${workspaceRoot}"
+         },
+         "problemMatcher": [
+            "$gcc"
+         ]
+      }
+   ]
+}

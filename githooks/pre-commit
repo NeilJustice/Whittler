@@ -1,0 +1,19 @@
+#!/bin/bash
+set -u
+
+osname="$(uname --operating-system)"
+if [[ "$osname" == *"Linux" ]]; then
+   ./JenkinsJobs/Linux/Whittler.sh
+elif [ "$osname" == "Msys" ]; then
+   powershell.exe ./JenkinsJobs/Windows/Whittler.ps1
+fi
+jenkinsJobExitCode=$?
+if [ "$jenkinsJobExitCode" -ne 0 ]; then
+   echo "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>"
+   echo "pre-commit: Jenkins job failed with exit code $jenkinsJobExitCode. Disallowing commit."
+   echo "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>"
+   exit 1
+fi
+echo "***************************************************"
+echo "pre-commit: Jenkins job succeeded. Allowing commit."
+echo "***************************************************"

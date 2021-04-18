@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+build/
+WhittlerTests/CodeCoverageHTMLReport/
+WhittlerTests/CoberturaCodeCoverageResults_WhittlerTests.xml
+*.coverage
+
+# Pyinstaller
+*.spec
+
+# SonarQube
+.scannerwork/
+
+# Windows
+.vs/
+*.suo

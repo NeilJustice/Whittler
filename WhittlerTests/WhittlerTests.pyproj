@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>c867e1dd-3325-49ec-a06f-a539d659e4b8</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>WhittlerMainTests.py</StartupFile>
+    <SearchPath>..\</SearchPath>
+    <WorkingDirectory>D:\Code\Whittler</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>WhittlerTests</Name>
+    <RootNamespace>WhittlerTests</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <CommandLineArguments>
+    </CommandLineArguments>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterId>
+    </InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="FileTests.py" />
+    <Compile Include="BuildAndInstallWhittlerBinary.py" />
+    <Compile Include="BuildAndInstallWhittlerBinaryTests.py" />
+    <Compile Include="ProcessTests.py" />
+    <Compile Include="MypyFlake8PylintRunTestsWithCoverage.py" />
+    <Compile Include="MypyFlake8PylintRunTestsWithCoverageTests.py" />
+    <Compile Include="ProcessThread.py" />
+    <Compile Include="Python.py" />
+    <Compile Include="PythonTests.py" />
+    <Compile Include="Random.py" />
+    <Compile Include="RandomTests.py" />
+    <Compile Include="RunAll.py" />
+    <Compile Include="RunAllWithCoverage.py" />
+    <Compile Include="UnitTester.py" />
+    <Compile Include="UnitTesterTests.py" />
+    <Compile Include="WhittlerMainTests.py" />
+    <Compile Include="WhittlerProgramTests.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

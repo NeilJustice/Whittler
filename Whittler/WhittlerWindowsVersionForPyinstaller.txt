@@ -1,0 +1,19 @@
+VSVersionInfo(
+  ffi=FixedFileInfo(
+    filevers=(0, 7, 0, 0),
+    prodvers=(0, 7, 0, 0)
+    ),
+  kids=[
+    VarFileInfo([VarStruct(u'Translation', [0, 1200])]),
+    StringFileInfo(
+      [
+      StringTable(
+        u'000004b0',
+        [StringStruct(u'Comments', u'Whittler'),
+        StringStruct(u'FileDescription', u'Whittler - the standard output whittling program'),
+        StringStruct(u'ProductName', u'Whittler'),
+        StringStruct(u'ProductVersion', u'0.7.0.0'),
+        StringStruct(u'LegalCopyright', u'https://github.com/NeilJustice/Whittler')])
+      ])
+  ]
+)
