@@ -12,17 +12,17 @@ For example, when learning a new Linux executable such as `ansible`, one can rep
 |Codecov.io code coverage|[![codecov](https://codecov.io/gh/NeilJustice/Whittler/branch/main/graph/badge.svg?token=g9qpHBaepU)](https://codecov.io/gh/NeilJustice/Whittler)|
 |SonarCloud static analysis|[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NeilJustice_Whittler&metric=alert_status)](https://sonarcloud.io/dashboard?id=NeilJustice_Whittler)|
 
-* [Whittler Command Line Usage](#whittler-command-line-usage)
-* [Whittler Program Behavior](#whittler-program-behavior)
-* [Whittler Python Code Structure As It Appears In Visual Studio Code On Linux](#whittler-python-code-structure-as-it-appears-in-visual-studio-code-on-linux)
-* [Whittler Python Code Structure As It Appears In Visual Studio 2019 On Windows](#whittler-python-code-structure-as-it-appears-in-visual-studio-2019-on-windows)
-* [Linux Jenkins Job Which Unit Tests, Mypys, Flake8s, Pylints, SonarQubes, then Pyinstaller Creates Linux Binary whittler](#linux-jenkins-job-which-unit-tests-mypys-flake8s-pylints-sonarqubes-then-pyinstaller-creates-linux-binary-whittler)
-* [Windows Jenkins Job Which Unit Tests, Mypys, Flake8s, Pylints, SonarQubes, then Pyinstaller Creates Windows Executable Whittler.exe](#windows-jenkins-job-which-unit-tests-mypys-flake8s-pylints-sonarqubes-then-pyinstaller-creates-windows-executable-whittler.exe)
-* [How To Build And Install Binary whittler From Source On Linux](#how-to-build-and-install-binary-whittler-from-source-on-linux)
-* [How To Build And Install Executable Whittler.exe From Source On Windows](#how-to-build-and-install-executable-whittlerexe-from-source-on-windows)
-* [Whittler Roadmap](#roadmap)
+* [Whittler command line usage](#whittler-command-line-usage)
+* [Whittler program behavior](#whittler-program-behavior)
+* [Whittler Python code structure as it appears in Visual Studio Code on Linux](#whittler-python-code-structure-as-it-appears-in-visual-studio-code-on-linux)
+* [Whittler Python code structure as it appears in Visual Studio 2019 on Windows](#whittler-python-code-structure-as-it-appears-in-visual-studio-2019-on-windows)
+* [Linux Jenkins job which unit tests, mypys, flake8s, pylints, SonarQubes, then pyinstaller creates Linux binary whittler](#linux-jenkins-job-which-unit-tests-mypys-flake8s-pylints-sonarqubes-then-pyinstaller-creates-linux-binary-whittler)
+* [Windows Jenkins job which unit tests, mypys, flake8s, pylints, SonarQubes, then pyinstaller creates Windows executable Whittler.exe](#windows-jenkins-job-which-unit-tests-mypys-flake8s-pylints-sonarqubes-then-pyinstaller-creates-windows-executable-whittler.exe)
+* [How to build and install binary whittler from source on Linux](#how-to-build-and-install-binary-whittler-from-source-on-linux)
+* [How to build and install executable Whittler.exe from source on Windows](#how-to-build-and-install-executable-whittlerexe-from-source-on-windows)
+* [Whittler roadmap](#roadmap)
 
-## Whittler Command Line Usage
+## Whittler command line usage
 
 ```text
 Whittler v0.7.0
@@ -36,7 +36,7 @@ If Whittler has been run previously with the exact same command line arguments,
 file ~/.config/Whittler/<CommandLine>.txt is opened with EDITOR for continued editing.
 ```
 
-## Whittler Program Behavior
+## Whittler program behavior
 
 The prime use case for Whittler is to "whittle away" command line arguments and command line argument descriptions for Linux programs in the process of being learned, resulting in a file containing only not-yet-experimented-with command line arguments.
 
@@ -58,19 +58,19 @@ After an initial bout of text whittling, here is one possible instance of whittl
 
 Thereafter, whenever `whittler ansible --help` is run, existing file `~/.config/Whittler/ansible --help.txt` is reopened with `$EDITOR` for continued editing / whittling.
 
-## Whittler Python Code Structure As It Appears In Visual Studio Code On Linux
+## Whittler Python code structure as it appears in Visual Studio Code on Linux
 
 Seen in this screenshot is the `run` function in `Process.py` for running the to-be-whittled command line and returning its standard output and standard error text:
 
 ![Whittler code in Visual Studio Code](Screenshots/Linux/WhittlerCodeInVisualStudioCode.png)
 
-## Whittler Python Code Structure As It Appears In Visual Studio 2019 On Windows
+## Whittler Python code structure as it appears in Visual Studio 2019 on Windows
 
 Seen in this screenshot is the code that writes either `stdout` or `stderr` to Whittler file `~/.config/Whittler/<Command>.txt`:
 
 ![Whittler code in Visual Studio 2019](Screenshots/Windows/WhittlerCodeInVisualStudio2019.png)
 
-## Linux Jenkins Job Which Unit Tests, Mypys, Flake8s, Pylints, SonarQubes, then Pyinstaller Creates Linux Binary whittler
+## Linux Jenkins job which unit tests, mypys, flake8s, pylints, SonarQubes, then pyinstaller creates Linux binary whittler
 
 A Jenkins Blue Ocean build pipeline builds the following Whittler Jenkins job on Fedora 33 with Python 3.9.2:
 
@@ -82,7 +82,7 @@ A Jenkins Blue Ocean build pipeline builds the following Whittler Jenkins job on
 
 ![Windows Whittler Jenkins job](Screenshots/Windows/WindowsJenkinsJob.png)
 
-## How To Build And Install Binary whittler From Source On Linux
+## How to build and install binary whittler from source on Linux
 
 ```bash
 git clone https://github.com/NeilJustice/Whittler
@@ -95,7 +95,7 @@ Resulting binary `/usr/local/bin/whittler`:
 
 ![whittler on Linux](Screenshots/Linux/WhittlerBinary.png)
 
-## How To Build And Install Executable Whittler.exe From Source On Windows
+## How to build and install executable Whittler.exe from source on Windows
 
 ```powershell
 git clone https://github.com/NeilJustice/Whittler
@@ -108,7 +108,7 @@ Resulting executable `C:\bin\Whittler.exe`:
 
 ![Whittler.exe on Windows](Screenshots/Windows/WhittlerDotExe.png)
 
-## Whittler Roadmap
+## Whittler roadmap
 
 |Future feature|Implementation status as of 4/17/2021|
 |--------------|-------------------------------------|
