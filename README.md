@@ -8,7 +8,7 @@ For example, when learning a new Linux executable such as `ansible`, one can rep
 
 |Build Type|Build Status|
 |----------|------------|
-|GitHub Actions build for Linux, MacOS, and Windows|[![Whittler](https://github.com/NeilJustice/Whittler/actions/workflows/build.yml/badge.svg)](https://github.com/NeilJustice/Whittler/actions/workflows/build.yml)|
+|GitHub Actions build for Linux and Windows|[![Whittler](https://github.com/NeilJustice/Whittler/actions/workflows/build.yml/badge.svg)](https://github.com/NeilJustice/Whittler/actions/workflows/build.yml)|
 |Codecov.io code coverage|[![codecov](https://codecov.io/gh/NeilJustice/Whittler/branch/main/graph/badge.svg?token=g9qpHBaepU)](https://codecov.io/gh/NeilJustice/Whittler)|
 |SonarCloud static analysis|[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NeilJustice_Whittler&metric=alert_status)](https://sonarcloud.io/dashboard?id=NeilJustice_Whittler)|
 
@@ -114,6 +114,6 @@ Resulting executable `C:\bin\Whittler.exe`:
 
 |Future feature|Implementation status as of 4/17/2021|
 |--------------|-------------------------------------|
-|GitHub Actions build|Awaiting implementation|
-|100% Codecov.io badge|Awaiting implementation|
-|Replace unittest with pytest|Awaiting implementation|
+|Replace `unittest` with `pytest`|In progress|
+|Replace `coverage` with `pytest.cov`|In progress|
+|GitHub Actions build for macos-latest|Awaiting implementation|
