@@ -6,7 +6,7 @@ from WhittlerTests import ProcessThread
 
 def run_parallel_processpoolexecutor(func: Any, iterable: Any) -> bool:
    cpuCount = multiprocessing.cpu_count()
-   processPoolExecutor = concurrent.futures.ProcessPoolExecutor(cpuCount)
+   processPoolExecutor = concurrent.futures.ProcessPoolExecutor(cpuCount) # pylint: disable=consider-using-with
    exitCodes = processPoolExecutor.map(func, iterable)
    processPoolExecutor.shutdown(wait=True)
    allCommandsSucceeded = not any(exitCodes)
