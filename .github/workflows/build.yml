@@ -31,18 +31,20 @@ jobs:
         env:
           PYTHONPATH: "."
 
-      - name: Run Whittler
+      - name: Run WhittlerMain.py to confirm it runs and exits with code 0
         run: python Whittler/WhittlerMain.py
         env:
           PYTHONPATH: "."
 
-      - uses: codecov/codecov-action@v1
+      - name: Upload to Codecov.io if ubuntu-latest
+        uses: codecov/codecov-action@v1
         with:
           files: WhittlerTests/CoberturaCodeCoverageResults_WhittlerTests.xml
           fail_ci_if_error: true
           verbose: true
+        if: ${{ matrix.os == 'ubuntu-latest' }}
 
-      - name: SonarCloud scan
+      - name: SonarCloud scan if ubuntu-latest
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
