@@ -17,7 +17,7 @@ For example, when learning a new Linux executable such as `ansible`, one can rep
 * [Whittler Python code structure as it appears in Visual Studio Code on Linux](#whittler-python-code-structure-as-it-appears-in-visual-studio-code-on-linux)
 * [Whittler Python code structure as it appears in Visual Studio 2019 on Windows](#whittler-python-code-structure-as-it-appears-in-visual-studio-2019-on-windows)
 * [Linux Jenkins job which unit tests, mypys, flake8s, pylints, SonarQubes, then pyinstaller creates Linux binary whittler](#linux-jenkins-job-which-unit-tests-mypys-flake8s-pylints-sonarqubes-then-pyinstaller-creates-linux-binary-whittler)
-* [Windows Jenkins job which unit tests, mypys, flake8s, pylints, SonarQubes, then pyinstaller creates Windows executable Whittler.exe](#windows-jenkins-job-which-unit-tests-mypys-flake8s-pylints-sonarqubes-then-pyinstaller-creates-windows-executable-whittler.exe)
+* [Windows Jenkins job which unit tests, mypys, flake8s, pylints, SonarQubes, then pyinstaller creates Windows executable Whittler.exe](#windows-jenkins-job-which-unit-tests-mypys-flake8s-pylints-sonarqubes-then-pyinstaller-creates-windows-executable-whittler-exe)
 * [How to build and install binary whittler from source on Linux](#how-to-build-and-install-binary-whittler-from-source-on-linux)
 * [How to build and install executable Whittler.exe from source on Windows](#how-to-build-and-install-executable-whittlerexe-from-source-on-windows)
 * [Whittler roadmap](#roadmap)
