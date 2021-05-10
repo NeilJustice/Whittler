@@ -72,7 +72,7 @@ Seen in this screenshot is the code that writes either `stdout` or `stderr` to W
 
 ![Whittler code in Visual Studio 2019](Screenshots/Windows/WhittlerCodeInVisualStudio2019.png)
 
-## Linux Jenkins job which unit tests, mypys, flake8s, pylints, SonarQubes, then pyinstaller creates Linux binary whittler
+## Linux Jenkins job which unit tests, mypys, flake8s, pylints, SonarQube scans, then pyinstaller creates Linux binary whittler
 
 A Jenkins Blue Ocean build pipeline builds the following Jenkins job on Fedora 33 with Python 3.9.2 to statically analyze and unit test Whittler:
 
@@ -112,8 +112,7 @@ Resulting executable `C:\bin\Whittler.exe`:
 
 ## Whittler roadmap
 
-|Future feature|Implementation status as of 4/17/2021|
-|--------------|-------------------------------------|
-|Replace `unittest` with `pytest`|In progress|
-|Replace `coverage` with `pytest.cov`|In progress|
-|GitHub Actions build for macos-latest|Awaiting implementation|
+|Future feature|Implementation status as of 5/9/2021|
+|--------------|------------------------------------|
+|Replace `unittest` with `pytest`|Awaiting implementation|
+|Replace `coverage` with `pytest.cov`|Awaiting implementation|
