@@ -9,15 +9,15 @@ For example, when learning a new Linux executable such as `ansible`, one can rep
 |Build Type|Build Status|
 |----------|------------|
 |GitHub Actions build for ubuntu-latest and windows-latest|[![Whittler](https://github.com/NeilJustice/Whittler/actions/workflows/build.yml/badge.svg)](https://github.com/NeilJustice/Whittler/actions/workflows/build.yml)|
-|Codecov.io code coverage|[![codecov](https://codecov.io/gh/NeilJustice/Whittler/branch/main/graph/badge.svg?token=g9qpHBaepU)](https://codecov.io/gh/NeilJustice/Whittler)|
-|SonarCloud static analysis|[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NeilJustice_Whittler&metric=alert_status)](https://sonarcloud.io/dashboard?id=NeilJustice_Whittler)|
+|Codecov.io Python code coverage|[![codecov](https://codecov.io/gh/NeilJustice/Whittler/branch/main/graph/badge.svg?token=g9qpHBaepU)](https://codecov.io/gh/NeilJustice/Whittler)|
+|SonarCloud Python static analysis|[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NeilJustice_Whittler&metric=alert_status)](https://sonarcloud.io/dashboard?id=NeilJustice_Whittler)|
 
 * [Whittler command line usage](#whittler-command-line-usage)
 * [Whittler program behavior](#whittler-program-behavior)
 * [Whittler Python code structure as it appears in Visual Studio Code on Linux](#whittler-python-code-structure-as-it-appears-in-visual-studio-code-on-linux)
 * [Whittler Python code structure as it appears in Visual Studio 2019 on Windows](#whittler-python-code-structure-as-it-appears-in-visual-studio-2019-on-windows)
-* [Linux Jenkins job which unit tests, mypys, flake8s, pylints, SonarQubes, then pyinstaller creates Linux binary whittler](#linux-jenkins-job-which-unit-tests-mypys-flake8s-pylints-sonarqubes-then-pyinstaller-creates-linux-binary-whittler)
-* [Windows Jenkins job which unit tests, mypys, flake8s, pylints, SonarQubes, then pyinstaller creates Windows executable Whittler.exe](#windows-jenkins-job-which-unit-tests-mypys-flake8s-pylints-sonarqubes-then-pyinstaller-creates-windows-executable-whittler.exe)
+* [Linux Jenkins job which unit tests, mypys, flake8s, pylints, SonarQube scans, then pyinstaller creates Linux binary whittler](#linux-jenkins-job-which-unit-tests-mypys-flake8s-pylints-sonarqube-scans-then-pyinstaller-creates-linux-binary-whittler)
+* [Windows Jenkins job which unit tests, mypys, flake8s, pylints, SonarQube scans, then pyinstaller creates Windows executable Whittler.exe](#windows-jenkins-job-which-unit-tests-mypys-flake8s-pylints-sonarqube-scans-then-pyinstaller-creates-windows-executable-whittlerexe)
 * [How to build and install binary whittler from source on Linux](#how-to-build-and-install-binary-whittler-from-source-on-linux)
 * [How to build and install executable Whittler.exe from source on Windows](#how-to-build-and-install-executable-whittlerexe-from-source-on-windows)
 * [Whittler roadmap](#roadmap)
@@ -72,13 +72,13 @@ Seen in this screenshot is the code that writes either `stdout` or `stderr` to W
 
 ![Whittler code in Visual Studio 2019](Screenshots/Windows/WhittlerCodeInVisualStudio2019.png)
 
-## Linux Jenkins job which unit tests, mypys, flake8s, pylints, SonarQubes, then pyinstaller creates Linux binary whittler
+## Linux Jenkins job which unit tests, mypys, flake8s, pylints, SonarQube scans, then pyinstaller creates Linux binary whittler
 
 A Jenkins Blue Ocean build pipeline builds the following Jenkins job on Fedora 33 with Python 3.9.2 to statically analyze and unit test Whittler:
 
 ![Linux Whittler Jenkins job](Screenshots/Linux/LinuxJenkinsJob.png)
 
-## Windows Jenkins Job Which Unit Tests, Mypys, Flake8s, Pylints, SonarQubes, then Pyinstaller Creates Windows Executable Whittler.exe
+## Windows Jenkins job which unit tests, mypys, flake8s, pylints, SonarQube scans, then Pyinstaller creates Windows executable Whittler.exe
 
 A Jenkins Blue Ocean build pipeline builds the following Jenkins job on Windows 10 with Python 3.9.4 to statically analyze and unit test Whittler:
 
@@ -112,8 +112,7 @@ Resulting executable `C:\bin\Whittler.exe`:
 
 ## Whittler roadmap
 
-|Future feature|Implementation status as of 4/17/2021|
-|--------------|-------------------------------------|
-|Replace `unittest` with `pytest`|In progress|
-|Replace `coverage` with `pytest.cov`|In progress|
-|GitHub Actions build for macos-latest|Awaiting implementation|
+|Future feature|Implementation status as of 5/9/2021|
+|--------------|------------------------------------|
+|Replace `unittest` with `pytest`|Awaiting implementation|
+|Replace `coverage` with `pytest.cov`|Awaiting implementation|
