@@ -27,6 +27,13 @@ class WhittlerProgramTests(unittest.TestCase):
       self.command = Random.string()
       self.whittlerFilePath = Random.string()
 
+   def test_get_module_ReturnsWhittlerProgramModule(self):
+      #
+      whittlerProgram = WhittlerProgram.get_module()
+      #
+      self.assertTrue(inspect.ismodule(whittlerProgram))
+      self.assertEqual('Whittler.WhittlerProgram', whittlerProgram.__name__)
+
    def test_make_whittler_filepath_for_command_ReturnsHomeSlashDotWhittlerSlashProgramNameAndArgsDotTxt(self):
       @patch('os.path.expanduser', spec_set=True)
       def testcase(commandArg, expectedExpandUserArgument, _1):
@@ -42,14 +49,6 @@ class WhittlerProgramTests(unittest.TestCase):
       testcase('systemd --help', '~/.config/Whittler/systemd --help.txt')
       testcase('cmake --help-command set', '~/.config/Whittler/cmake --help-command set.txt')
       testcase('substr /?', '~/.config/Whittler/substr SlashQuestionMark.txt')
-
-
-   def test_get_module_ReturnsWhittlerProgramModule(self):
-      #
-      whittlerProgram = WhittlerProgram.get_module()
-      #
-      self.assertTrue(inspect.ismodule(whittlerProgram))
-      self.assertEqual('Whittler.WhittlerProgram', whittlerProgram.__name__)
 
 
    @patch('os.environ.get', spec_set=True)
