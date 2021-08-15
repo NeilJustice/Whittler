@@ -18,22 +18,22 @@ For example, when learning a new Linux executable such as `ansible`, one can rep
 * [Whittler Python code structure as it appears in Visual Studio 2019 on Windows](#whittler-python-code-structure-as-it-appears-in-visual-studio-2019-on-windows)
 * [Linux Jenkins job which unit tests, mypys, flake8s, pylints, SonarQube scans, then pyinstaller creates Linux binary whittler](#linux-jenkins-job-which-unit-tests-mypys-flake8s-pylints-sonarqube-scans-then-pyinstaller-creates-linux-binary-whittler)
 * [Windows Jenkins job which unit tests, mypys, flake8s, pylints, SonarQube scans, then pyinstaller creates Windows executable Whittler.exe](#windows-jenkins-job-which-unit-tests-mypys-flake8s-pylints-sonarqube-scans-then-pyinstaller-creates-windows-executable-whittlerexe)
-* [How to build and install binary whittler from source on Linux](#how-to-build-and-install-binary-whittler-from-source-on-linux)
-* [How to build and install executable Whittler.exe from source on Windows](#how-to-build-and-install-executable-whittlerexe-from-source-on-windows)
+* [4 steps to build binary whittler from source on Linux with PyInstaller](#4-steps-to-build-binary-whittler-from-source-on-linux-with-pyinstaller)
+* [4 steps to build executable Whittler.exe from source on Windows with PyInstaller](#4-steps-to-build-executable-whittlerexe-from-source-on-windows-with-pyinstaller)
 * [Whittler roadmap](#roadmap)
 
 ## Whittler command line usage
 
-```text
+```html
 Whittler v0.7.0
-https://github.com/NeilJustice/Whittler
+Facilitates the figurative whittling away (deletion) of "inessential" standard output text
 
 Usage: whittler <ProgramName> [ProgramArguments...]
 
 Whittler writes standard output text from a given command line
 to file ~/.config/Whittler/<CommandLine>.txt for editing with the EDITOR-defined text editor.
 If Whittler has been run previously with the exact same command line arguments,
-file ~/.config/Whittler/<CommandLine>.txt is opened with EDITOR for continued editing.
+file ~/.config/Whittler/<CommandLine>.txt is opened with EDITOR for continued whittling/editing.
 ```
 
 ## Whittler program behavior
@@ -74,17 +74,13 @@ Seen in this screenshot is the code that writes either `stdout` or `stderr` to W
 
 ## Linux Jenkins job which unit tests, mypys, flake8s, pylints, SonarQube scans, then pyinstaller creates Linux binary whittler
 
-A Jenkins Blue Ocean build pipeline builds the following Jenkins job on Fedora 33 with Python 3.9.2 to statically analyze and unit test Whittler:
-
 ![Linux Whittler Jenkins job](Screenshots/Linux/LinuxJenkinsJob.png)
 
 ## Windows Jenkins job which unit tests, mypys, flake8s, pylints, SonarQube scans, then Pyinstaller creates Windows executable Whittler.exe
 
-A Jenkins Blue Ocean build pipeline builds the following Jenkins job on Windows 10 with Python 3.9.4 to statically analyze and unit test Whittler:
-
 ![Windows Whittler Jenkins job](Screenshots/Windows/WindowsJenkinsJob.png)
 
-## How to build and install binary whittler from source on Linux
+## 4 steps to build binary whittler from source on Linux with PyInstaller
 
 ```bash
 git clone https://github.com/NeilJustice/Whittler
@@ -97,7 +93,7 @@ Resulting binary `/usr/local/bin/whittler`:
 
 ![whittler on Linux](Screenshots/Linux/WhittlerBinary.png)
 
-## How to build and install executable Whittler.exe from source on Windows
+## 4 steps to build executable Whittler.exe from source on Windows with PyInstaller
 
 ```powershell
 git clone https://github.com/NeilJustice/Whittler
@@ -109,10 +105,3 @@ cd Whittler
 Resulting executable `C:\bin\Whittler.exe`:
 
 ![Whittler.exe on Windows](Screenshots/Windows/WhittlerDotExe.png)
-
-## Whittler roadmap
-
-|Future feature|Implementation status as of 5/9/2021|
-|--------------|------------------------------------|
-|Replace `unittest` with `pytest`|Awaiting implementation|
-|Replace `coverage` with `pytest.cov`|Awaiting implementation|

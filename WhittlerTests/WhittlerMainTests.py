@@ -15,14 +15,14 @@ testNames = [
 class WhittlerMainTests(unittest.TestCase):
 
    ExpectedCommandLineUsage = '''Whittler v0.7.0
-https://github.com/NeilJustice/Whittler
+Facilitates the figurative whittling away (deletion) of "inessential" standard output text
 
 Usage: whittler <ProgramName> [ProgramArguments...]
 
 Whittler writes standard output text from a given command line
 to file ~/.config/Whittler/<CommandLine>.txt for editing with the EDITOR-defined text editor.
 If Whittler has been run previously with the exact same command line arguments,
-file ~/.config/Whittler/<CommandLine>.txt is opened with EDITOR for continued editing.
+file ~/.config/Whittler/<CommandLine>.txt is opened with EDITOR for continued whittling/editing.
 '''
 
    def setUp(self):
