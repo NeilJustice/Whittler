@@ -20,7 +20,6 @@ For example, when learning a new Linux executable such as `ansible`, one can rep
 * [Windows Jenkins job which unit tests, mypys, flake8s, pylints, SonarQube scans, then pyinstaller creates Windows executable Whittler.exe](#windows-jenkins-job-which-unit-tests-mypys-flake8s-pylints-sonarqube-scans-then-pyinstaller-creates-windows-executable-whittlerexe)
 * [4 steps to build binary whittler from source on Linux with PyInstaller](#4-steps-to-build-binary-whittler-from-source-on-linux-with-pyinstaller)
 * [4 steps to build executable Whittler.exe from source on Windows with PyInstaller](#4-steps-to-build-executable-whittlerexe-from-source-on-windows-with-pyinstaller)
-* [Whittler roadmap](#roadmap)
 
 ## Whittler command line usage
 
