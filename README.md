@@ -24,8 +24,7 @@ For example, when learning a new Linux executable such as `ansible`, one can rep
 ## Whittler command line usage
 
 ```html
-Whittler v0.7.0
-Facilitates the figurative whittling away (deletion) of "inessential" standard output text
+Whittler v0.7.0 - Facilitates whittling away (deleting) "inessential" standard output text.
 
 Usage: whittler <ProgramName> [ProgramArguments...]
 

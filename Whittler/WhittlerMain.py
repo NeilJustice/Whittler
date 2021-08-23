@@ -3,8 +3,7 @@ import sys
 from typing import List
 from Whittler import WhittlerProgram
 
-CommandLineUsage = '''Whittler v0.7.0
-Facilitates the figurative whittling away (deletion) of "inessential" standard output text
+CommandLineUsage = '''Whittler v0.7.0 - Facilitates whittling away (deleting) "inessential" standard output text.
 
 Usage: whittler <ProgramName> [ProgramArguments...]
 
