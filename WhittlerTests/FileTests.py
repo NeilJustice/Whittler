@@ -26,7 +26,7 @@ class FileTests(unittest.TestCase):
       os.path.dirname.assert_called_once_with(filePath)
       os.makedirs.assert_called_once_with(directoryName, exist_ok=True)
       fileMock.assert_has_calls([
-         call(filePath, 'w'),
+         call(filePath, 'w', encoding='ascii'),
          call().__enter__(),
          call().writelines([line1 + '\n', line2 + '\n']),
          call().__exit__(None, None, None)])

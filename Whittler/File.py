@@ -4,6 +4,6 @@ import os
 def write_lines(filePath: str, lines: List[str]) -> None:
    directoryName = os.path.dirname(filePath)
    os.makedirs(directoryName, exist_ok=True)
-   with open(filePath, 'w') as file:
+   with open(filePath, 'w', encoding='ascii') as file:
       linesWithNewlineEndings = list(map(lambda line: line + '\n', lines))
       file.writelines(linesWithNewlineEndings)
