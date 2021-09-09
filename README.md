@@ -2,9 +2,9 @@
 
 [![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/) ![GitHub last commit](https://img.shields.io/github/last-commit/NeilJustice/Whittler)
 
-Whittler is a Python command line program which facilitates the figurative "whittling away" (deletion) of "inessential" standard output text, especially Linux `program_name --help` standard output text, resulting in a file containing only "essential" standard output text.
+Whittler is a Python command line program which facilitates the figurative "whittling away" (deletion) of "inessential" standard output text, especially Linux `program_name --help` standard output text, resulting in a file containing only "essential" standard output text which can be repeatedly reopened with Whittler for continued whittling.
 
-For example, when learning a new Linux executable such as `ansible`, one can repeatedly invoke `whittler ansible --help` to iteratively "whittle away" command line arguments and command line argument descriptions so as to be left with a text file containing only `ansible` command line arguments not yet experimented with.
+For example, when learning a new Linux program such as `ansible`, `whittler ansible --help` can be repeatedly invoked to iteratively "whittle away" command line argument descriptions so as to be left with a text file containing only `ansible` command line arguments not yet experimented with.
 
 |Build Type|Build Status|
 |----------|------------|
@@ -24,19 +24,27 @@ For example, when learning a new Linux executable such as `ansible`, one can rep
 ## Whittler command line usage
 
 ```html
-Whittler v0.7.0 - Facilitates whittling away (deleting) "inessential" standard output text.
+Whittler v0.7.0 - Facilitates the figurative whittling away of program standard output text.
 
 Usage: whittler <ProgramName> [ProgramArguments...]
 
 Whittler writes standard output text from a given command line
 to file ~/.config/Whittler/<CommandLine>.txt for editing with the EDITOR-defined text editor.
+
 If Whittler has been run previously with the exact same command line arguments,
-file ~/.config/Whittler/<CommandLine>.txt is opened with EDITOR for continued whittling/editing.
+file ~/.config/Whittler/<CommandLine>.txt is opened with EDITOR for continued whittling.
+
+Example sequence of Whittler invocations:
+whittler ag --help
+whittler ag --help
+whittler ag --help
 ```
+
+(`ag` is the excellent command line program Silver Searcher for quickly finding file text and file names.)
 
 ## Whittler program behavior
 
-The prime use case for Whittler is to "whittle away" command line arguments and command line argument descriptions for Linux programs in the process of being learned, resulting in a file containing only not-yet-experimented-with command line arguments.
+The main use case for Whittler is to "whittle away" command line argument descriptions for Linux programs in the process of being learned, resulting in a text file containing only not-yet-experimented-with command line arguments.
 
 For example, when `whittler ansible --help` is run, standard output for `ansible --help` is written to file `~/.config/Whittler/ansible --help.txt` and is then opened with the `$EDITOR` text editor.
 
@@ -60,13 +68,13 @@ Thereafter, whenever `whittler ansible --help` is run, existing file `~/.config/
 
 ## Whittler Python code structure as it appears in Visual Studio Code on Linux
 
-Seen in this screenshot is the `run` function in `Process.py` for running the to-be-whittled command line and returning its standard output and standard error text:
+Shown in this screenshot is the `run` function in `Process.py` for running the specified command line and returning its standard output and standard error text:
 
 ![Whittler code in Visual Studio Code](Screenshots/Linux/WhittlerCodeInVisualStudioCode.png)
 
 ## Whittler Python code structure as it appears in Visual Studio 2019 on Windows
 
-Seen in this screenshot is the code that writes either `stdout` or `stderr` to Whittler file `~/.config/Whittler/<Command>.txt`:
+Shown in this screenshot is the code that writes either `stdout` or `stderr` to Whittler file `~/.config/Whittler/<Command>.txt`:
 
 ![Whittler code in Visual Studio 2019](Screenshots/Windows/WhittlerCodeInVisualStudio2019.png)
 

@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c867e1dd-3325-49ec-a06f-a539d659e4b8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>FileTests.py</StartupFile>
+    <StartupFile>RunAll.py</StartupFile>
     <SearchPath>..\</SearchPath>
     <WorkingDirectory>D:\Code\Whittler</WorkingDirectory>
     <OutputPath>.</OutputPath>
