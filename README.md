@@ -1,7 +1,5 @@
 # Whittler
 
-[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/) ![GitHub last commit](https://img.shields.io/github/last-commit/NeilJustice/Whittler)
-
 Whittler is a Python command line program which facilitates the figurative "whittling away" (deletion) of "inessential" standard output text, especially Linux `program_name --help` standard output text, resulting in a file containing only "essential" standard output text which can be repeatedly reopened with Whittler for continued whittling.
 
 For example, when learning a new Linux program such as `ansible`, `whittler ansible --help` can be repeatedly invoked to iteratively "whittle away" command line argument descriptions so as to be left with a text file containing only `ansible` command line arguments not yet experimented with.
