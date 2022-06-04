@@ -3,7 +3,7 @@ indent-string='   '
 max-line-length=1000
 
 [MASTER]
-disable=consider-using-with,invalid-name,no-member,missing-docstring,no-value-for-parameter,too-many-function-args
+disable=consider-using-with,invalid-name,no-member,missing-docstring,no-value-for-parameter,too-many-function-args,unnecessary-dunder-call
 
 [REPORTS]
 output-format=text

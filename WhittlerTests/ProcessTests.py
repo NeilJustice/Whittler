@@ -29,7 +29,7 @@ class ProcessTests(unittest.TestCase):
       self.command = Random.string()
       self.shlexedCommand = Random.string()
       self.currentWorkingDirectory = Random.string()
-      self.ExpectedPylintcommand = 'pylint --rcfile=.pylintrc --init-hook=\"sys.path.append(\'.\')\" '
+      self.ExpectedPylintcommand = 'pylint --rcfile=.pylintrc '
 
    @patch('platform.system', spec_set=True)
    @patch('subprocess.call', spec_set=True)
