@@ -5,7 +5,7 @@ osname="$(uname --operating-system)"
 if [[ "$osname" == *"Linux" ]]; then
    ./JenkinsJobs/Linux/Whittler.sh
 elif [ "$osname" == "Msys" ]; then
-   powershell.exe ./JenkinsJobs/Windows/Whittler.ps1
+   pwsh.exe ./JenkinsJobs/Windows/Whittler.ps1
 fi
 jenkinsJobExitCode=$?
 if [ "$jenkinsJobExitCode" -ne 0 ]; then
