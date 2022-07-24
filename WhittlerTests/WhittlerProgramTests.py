@@ -10,7 +10,7 @@ testNames = [
 'test_get_module_ReturnsWhittlerProgramModule',
 'test_make_whittler_filepath_for_command_ReturnsHomeSlashDotWhittlerSlashProgramNameAndArgsDotTxt',
 'test_open_whittler_file_with_editor_environment_variable_OpensFileWithEDITOR',
-'test_prefix_command_with_powershell_dot_exe_if_command_is_get_help_ReturnsPowerShellPrefixedCommandIfGetHelp',
+'test_prefix_command_with_pwsh_dot_exe_if_command_is_get_help_ReturnsPowerShellPrefixedCommandIfGetHelp',
 'test_open_or_create_whittler_file_WhittlerFileAlreadyExists_OpensItWithEDITOR',
 'test_open_or_create_whittler_file_WhittlerFileDoesNotAlreadyExist_CreatesItAndOpensItWithEDITOR',
 'test_run_CallsOpenOrCreateWhittlerFile_Returns0',
@@ -69,16 +69,16 @@ class WhittlerProgramTests(unittest.TestCase):
       Process.fail_fast_run.assert_called_once_with(expectedEditorCommand, True)
 
 
-   def test_prefix_command_with_powershell_dot_exe_if_command_is_get_help_ReturnsPowerShellPrefixedCommandIfGetHelp(self):
+   def test_prefix_command_with_pwsh_dot_exe_if_command_is_get_help_ReturnsPowerShellPrefixedCommandIfGetHelp(self):
       def testcase(command, expectedAdjustedCommand):
          with self.subTest(f'{command, expectedAdjustedCommand}'):
             #
-            adjustedCommand = WhittlerProgram.prefix_command_with_powershell_dot_exe_if_command_is_get_help(command)
+            adjustedCommand = WhittlerProgram.prefix_command_with_pwsh_dot_exe_if_command_is_get_help(command)
             #
             self.assertEqual(expectedAdjustedCommand, adjustedCommand)
-      testcase('get-help', "powershell.exe -Command 'get-help'")
-      testcase('Get-Help', "powershell.exe -Command 'Get-Help'")
-      testcase('Get-Help Get-Command -detailed', "powershell.exe -Command 'Get-Help Get-Command -detailed'")
+      testcase('get-help', "pwsh.exe -Command 'get-help'")
+      testcase('Get-Help', "pwsh.exe -Command 'Get-Help'")
+      testcase('Get-Help Get-Command -detailed', "pwsh.exe -Command 'Get-Help Get-Command -detailed'")
       testcase('whoami', "whoami")
       testcase(' get-help', " get-help")
 
@@ -109,36 +109,36 @@ class WhittlerProgramTests(unittest.TestCase):
 
 
    @patch('Whittler.WhittlerProgram.try_open_whittler_file', spec_set=True)
-   @patch('Whittler.WhittlerProgram.prefix_command_with_powershell_dot_exe_if_command_is_get_help', spec_set=True)
+   @patch('Whittler.WhittlerProgram.prefix_command_with_pwsh_dot_exe_if_command_is_get_help', spec_set=True)
    @patch('Whittler.WhittlerProgram.write_program_output_to_whittler_file', spec_set=True)
    @patch('Whittler.WhittlerProgram.open_whittler_file_with_editor_environment_variable', spec_set=True)
    def test_open_or_create_whittler_file_WhittlerFileAlreadyExists_OpensItWithEDITOR(self, _1, _2, _3, _4):
       WhittlerProgram.try_open_whittler_file.return_value = True
       powershellAdjustedCommand = Random.string()
-      WhittlerProgram.prefix_command_with_powershell_dot_exe_if_command_is_get_help.return_value = powershellAdjustedCommand
+      WhittlerProgram.prefix_command_with_pwsh_dot_exe_if_command_is_get_help.return_value = powershellAdjustedCommand
       WhittlerProgram.write_program_output_to_whittler_file.return_value = self.whittlerFilePath
       #
       WhittlerProgram.open_or_create_whittler_file(self.command)
       #
-      WhittlerProgram.prefix_command_with_powershell_dot_exe_if_command_is_get_help.assert_called_once_with(self.command)
+      WhittlerProgram.prefix_command_with_pwsh_dot_exe_if_command_is_get_help.assert_called_once_with(self.command)
       WhittlerProgram.try_open_whittler_file.assert_called_once_with(powershellAdjustedCommand)
       WhittlerProgram.write_program_output_to_whittler_file.assert_not_called()
       WhittlerProgram.open_whittler_file_with_editor_environment_variable.assert_not_called()
 
 
    @patch('Whittler.WhittlerProgram.try_open_whittler_file', spec_set=True)
-   @patch('Whittler.WhittlerProgram.prefix_command_with_powershell_dot_exe_if_command_is_get_help', spec_set=True)
+   @patch('Whittler.WhittlerProgram.prefix_command_with_pwsh_dot_exe_if_command_is_get_help', spec_set=True)
    @patch('Whittler.WhittlerProgram.write_program_output_to_whittler_file', spec_set=True)
    @patch('Whittler.WhittlerProgram.open_whittler_file_with_editor_environment_variable', spec_set=True)
    def test_open_or_create_whittler_file_WhittlerFileDoesNotAlreadyExist_CreatesItAndOpensItWithEDITOR(self, _1, _2, _3, _4):
       WhittlerProgram.try_open_whittler_file.return_value = False
       powershellAdjustedCommand = Random.string()
-      WhittlerProgram.prefix_command_with_powershell_dot_exe_if_command_is_get_help.return_value = powershellAdjustedCommand
+      WhittlerProgram.prefix_command_with_pwsh_dot_exe_if_command_is_get_help.return_value = powershellAdjustedCommand
       WhittlerProgram.write_program_output_to_whittler_file.return_value = self.whittlerFilePath
       #
       WhittlerProgram.open_or_create_whittler_file(self.command)
       #
-      WhittlerProgram.prefix_command_with_powershell_dot_exe_if_command_is_get_help.assert_called_once_with(self.command)
+      WhittlerProgram.prefix_command_with_pwsh_dot_exe_if_command_is_get_help.assert_called_once_with(self.command)
       WhittlerProgram.try_open_whittler_file.assert_called_once_with(powershellAdjustedCommand)
       WhittlerProgram.write_program_output_to_whittler_file.assert_called_once_with(powershellAdjustedCommand)
       WhittlerProgram.open_whittler_file_with_editor_environment_variable.assert_called_once_with(self.whittlerFilePath)

@@ -9,7 +9,7 @@ def make_whittler_filepath_for_command(command: str) -> str:
    return whittlerFilePath
 
 def open_or_create_whittler_file(command: str) -> None:
-   powershellAdjustedCommand = prefix_command_with_powershell_dot_exe_if_command_is_get_help(command)
+   powershellAdjustedCommand = prefix_command_with_pwsh_dot_exe_if_command_is_get_help(command)
    if try_open_whittler_file(powershellAdjustedCommand):
       return
    whittlerFilePath = write_program_output_to_whittler_file(powershellAdjustedCommand)
@@ -22,10 +22,10 @@ def open_whittler_file_with_editor_environment_variable(whittlerFilePath: str) -
    Process.fail_fast_run(editorCommand, True)
    print('[Whittler] ExitCode: 0')
 
-def prefix_command_with_powershell_dot_exe_if_command_is_get_help(command: str) -> str:
+def prefix_command_with_pwsh_dot_exe_if_command_is_get_help(command: str) -> str:
    casefoldedCommand = command.casefold()
    if casefoldedCommand.startswith('get-help'):
-      return f"powershell.exe -Command '{command}'"
+      return f"pwsh.exe -Command '{command}'"
    return command
 
 def run(command: str) -> int:
